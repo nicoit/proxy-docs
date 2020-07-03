@@ -19,7 +19,7 @@ class ProxyController extends Controller
             'timeout'  => 200.0,
         ]);
         $response = $client->request('GET', $request->getRequestUri());
-        dd($request->getRequestUri(), $response->getHeaders(), $response->getBody()->getContents());
+       // dd($request->getRequestUri(), $response->getHeaders(), $response->getBody()->getContents());
         return $response->getBody();
     }
 
