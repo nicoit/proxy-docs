@@ -16,10 +16,10 @@ class ProxyController extends Controller
             // Base URI is used with relative requests
             'base_uri' => 'https://docs.google.com',
             // You can set any number of default request options.
-            'timeout'  => 2.0,
+            'timeout'  => 200.0,
         ]);
         $response = $client->request('GET', $request->getRequestUri());
-        //dd($response->getBody(), $request);
+        dd($request->getRequestUri(), $response->getHeaders(), $response->getBody()->getContents());
         return $response->getBody();
     }
 
